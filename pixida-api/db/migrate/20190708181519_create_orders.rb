@@ -5,6 +5,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.string :service_type
       t.string :item_type
       t.boolean :comeback
+      t.integer :customer_id
 
       t.timestamps
     end

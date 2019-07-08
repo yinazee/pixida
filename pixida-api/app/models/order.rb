@@ -1,4 +1,8 @@
 class Order < ApplicationRecord
+  belongs_to :customer
 
-  belongs_to :user
+  has_one :service_type
+  has_one :item_type
+
+
 end

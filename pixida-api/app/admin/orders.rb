@@ -1,5 +1,5 @@
 ActiveAdmin.register Order do
-   permit_params :order_number, :service_type, :item_type, :comeback, :user_id
+   permit_params :order_number, :service_type, :item_type, :comeback, :customer_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
