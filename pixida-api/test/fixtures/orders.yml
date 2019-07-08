@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_type: MyString
+  item_type: MyString
+  comeback: MyString
+  boolean: MyString
+
+two:
+  service_type: MyString
+  item_type: MyString
+  comeback: MyString
+  boolean: MyString
