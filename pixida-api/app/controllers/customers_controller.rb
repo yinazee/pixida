@@ -15,7 +15,7 @@ class CustomersController < ApiController
 
   # POST /customers
   def create
-    @customer = Customer.new(customer_params)
+    @customer = Customer.find_or_create_by(customer_params)
 
     if @customer.save
       render json: @customer, status: :created, location: @customer

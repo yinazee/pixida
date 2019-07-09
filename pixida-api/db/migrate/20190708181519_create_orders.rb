@@ -1,9 +1,8 @@
 class CreateOrders < ActiveRecord::Migration[5.2]
   def change
     create_table :orders do |t|
-      t.integer :order_number
-      t.string :service_type
-      t.string :item_type
+      t.integer :service_id
+      t.integer :item_id
       t.boolean :comeback
       t.integer :customer_id
 
