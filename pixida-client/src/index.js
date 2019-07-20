@@ -16,7 +16,7 @@ import App from './containers/App'
 ReactDOM.render(
   // <Provider >
     <App  />,
-  // </Provider>,
+   // </Provider>,
   document.getElementById('root')
 )
 
