@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import OrderCard from './OrderCard'
-import orders from '../order-data'
+// import orders from '../order-data'
 import './App.css'
 
 
