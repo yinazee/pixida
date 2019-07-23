@@ -8,6 +8,7 @@ class Waiting extends Component {
     // const orderCards = this.props.orders.map(order => <OrderCard order={order}/>)
       <div class="container">
       <div class="tbl-header">
+        <h1>waiting component</h1>
         <table cellpadding="0" cellspacing="0" border="0">
           <thead>
             <tr>
