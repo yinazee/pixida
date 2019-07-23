@@ -10,6 +10,7 @@ class CustomersController < ApiController
 
   # GET /customers/1
   def show
+    
     render json: @customer
   end
 

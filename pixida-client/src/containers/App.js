@@ -29,11 +29,12 @@ class App extends Component {
     // const { fetchingData } = this.state
     // console.log(fetchingData)
     return (
-      <div className="App">
+
+      <div class="App">
         <img src="https://i.imgur.com/jbzs690.png" alt="pixida"/>
         <h1>PIXIDA</h1>
 
-      <div>
+      <div class="App">
       {this.state.orders.length === 0 ?
         "LOL"  :
         <OrderShow order={this.state.orders[0]}/>}

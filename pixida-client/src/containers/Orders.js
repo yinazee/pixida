@@ -8,10 +8,10 @@ class Orders extends Component {
 
 
   render() {
-    const orderCards = this.props.orders.map(order => <OrderCard key={order.name} order={order}/>)
+
     return (
     <div>
-      { orderCards }
+
     </div>
     )
   }

@@ -47,6 +47,6 @@ class OrdersController < ApiController
 
     # Only allow a trusted parameter "white list" through.
     def order_params
-      params.require(:order).permit(:service_type, :item_type, :comeback)
+      params.require(:order).permit(:customer_id, :service_type, :item_type, :comeback)
     end
 end

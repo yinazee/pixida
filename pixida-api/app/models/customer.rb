@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
   has_many :orders
-  validates_presence_of :name
-  validates :name, uniqueness: true
+  belongs_to :order
+  validates :first_name, uniqueness: true
+  validates :last_name, uniqueness: true
 end
