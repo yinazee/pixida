@@ -4,9 +4,9 @@ import './table.css'
 
 class Waiting extends Component {
   render() {
-    const orderCards = this.props.orders.map(order => <OrderCard key={order.name} order={order}/>)
     return (
-      <div>
+    // const orderCards = this.props.orders.map(order => <OrderCard order={order}/>)
+      <div class="container">
       <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
           <thead>
@@ -25,25 +25,25 @@ class Waiting extends Component {
           <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
               <tr>
-                <td>AAC</td>
-                <td>AUSTRALIAN COMPANY </td>
-                <td>$1.38</td>
-                <td>+2.01</td>
-                <td>-0.36%</td>
+                <td>order.customer.first_name</td>
+                <td>order.customer.last_name</td>
+                <td>order.item</td>
+                <td>order.service</td>
+                <td>order.status</td>
               </tr>
               <tr>
-                <td>AAD</td>
-                <td>AUSENCO</td>
-                <td>$2.38</td>
-                <td>-0.01</td>
-                <td>-1.36%</td>
+                <td>Scott</td>
+                <td>Yu</td>
+                <td>Watch</td>
+                <td>Battery</td>
+                <td>Claim</td>
               </tr>
               <tr>
-                <td>AAD</td>
-                <td>AUSENCO</td>
-                <td>$2.38</td>
-                <td>-0.01</td>
-                <td>-1.36%</td>
+                <td>Luca</td>
+                <td>Rose</td>
+                <td>Ring</td>
+                <td>Steam Clean</td>
+                <td>Claim</td>
               </tr>
 
             </tbody>

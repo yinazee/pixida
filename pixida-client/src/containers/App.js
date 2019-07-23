@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Orders from './Orders'
 import OrderShow from './OrderShow'
+import OrderCard from './OrderCard'
 import Waiting from './Waiting'
+import Claimed from './Claimed'
 import './App.css';
 
 const APIURL = 'http://localhost:3000/'
@@ -26,8 +28,6 @@ class App extends Component {
 
   render() {
 
-    // const { fetchingData } = this.state
-    // console.log(fetchingData)
     return (
 
       <div class="App">
@@ -39,7 +39,12 @@ class App extends Component {
         "LOL"  :
         <OrderShow order={this.state.orders[0]}/>}
         <Orders orders={this.state.orders}/>
+        <div>
         <Waiting />
+        </div>
+        <div>
+        <Claimed />
+        </div>
        </div>
 
       </div>
