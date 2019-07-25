@@ -9,6 +9,7 @@ import './App.css';
 const APIURL = 'http://localhost:3000/'
 
 
+
 class App extends Component {
 
 
@@ -39,13 +40,9 @@ class App extends Component {
         "LOL"  :
         <OrderShow order={this.state.orders[0]}/>}
         <Orders orders={this.state.orders}/>
-        <div>
         <Waiting />
-        </div>
-        <div>
         <Claimed />
         </div>
-       </div>
 
       </div>
     )

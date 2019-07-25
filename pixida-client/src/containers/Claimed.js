@@ -9,7 +9,7 @@ class Claimed extends Component {
 
       <div class="container">
       <div class="tbl-header">
-        <h1>claim component</h1>
+        <h3>claim component</h3>
         <table cellpadding="0" cellspacing="0" border="0">
 
           <thead>
