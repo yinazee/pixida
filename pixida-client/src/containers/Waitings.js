@@ -2,11 +2,11 @@ import React from 'react'
 import './table.css'
 
 
-const Claimed = (props) => (
+const Waiting = (props) => (
 
   <section>
 
-    <h3>Customers Claimed</h3>
+    <h3>Customers Waiting</h3>
 
     <div className="tbl-header">
       <table cellPadding="0" cellSpacing="0" border="0">
@@ -42,4 +42,4 @@ const Claimed = (props) => (
 )
 
 
-export default Claimed
+export default Waiting

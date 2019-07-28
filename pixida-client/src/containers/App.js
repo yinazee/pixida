@@ -1,47 +1,150 @@
 import React, { Component } from 'react';
-import Orders from './Orders'
-import OrderShow from './OrderShow'
-import OrderCard from './OrderCard'
-import Waiting from './Waiting'
+// import Orders from './Orders'
+import Waiting from './Waitings'
 import Claimed from './Claimed'
 import './App.css';
 
-const APIURL = 'http://localhost:3000/'
 
+const orders = [
+  {
+    customer: {
+      first_name: "Maggie",
+      last_name: "Price"
+    },
+    item: {
+      name: "Ring"
+    },
+    service: {
+      name: "Engraving"
+    },
+    status: {
+      boolean: "Claim"
+    }
+  },
+  {
+    customer: {
+      first_name: "Scott",
+      last_name: "Yu"
+    },
+    item: {
+      name: "Champagne Glasses"
+    },
+    service: {
+      name: "Embossing"
+    },
+    status: {
+      boolean: "Claim"
+    }
+  },
+  {
+    customer: {
+      first_name: "Scott",
+      last_name: "Yu"
+    },
+    item: {
+      name: "Champagne Glasses"
+    },
+    service: {
+      name: "Embossing"
+    },
+    status: {
+      boolean: "Claim"
+    }
+  },
+  {
+    customer: {
+      first_name: "Scott",
+      last_name: "Yu"
+    },
+    item: {
+      name: "Champagne Glasses"
+    },
+    service: {
+      name: "Embossing"
+    },
+    status: {
+      boolean: "Claim"
+    }
+  },
+  {
+    customer: {
+      first_name: "Scott",
+      last_name: "Yu"
+    },
+    item: {
+      name: "Champagne Glasses"
+    },
+    service: {
+      name: "Embossing"
+    },
+    status: {
+      boolean: "Claim"
+    }
+  },
+  {
+    customer: {
+      first_name: "Scott",
+      last_name: "Yu"
+    },
+    item: {
+      name: "Champagne Glasses"
+    },
+    service: {
+      name: "Embossing"
+    },
+    status: {
+      boolean: "Claim"
+    }
+  },
+  {
+    customer: {
+      first_name: "Scott",
+      last_name: "Yu"
+    },
+    item: {
+      name: "Champagne Glasses"
+    },
+    service: {
+      name: "Embossing"
+    },
+    status: {
+      boolean: "Claim"
+    }
+  },
+  {
+    customer: {
+      first_name: "Scott",
+      last_name: "Yu"
+    },
+    item: {
+      name: "Champagne Glasses"
+    },
+    service: {
+      name: "Embossing"
+    },
+    status: {
+      boolean: "Claim"
+    }
+  }
+]
 
 
 class App extends Component {
 
 
-  constructor() {
-    super()
-    this.state = {
-      orders: []
-    }
-  }
-
-  componentDidMount() {
-    fetch('http://localhost:3001/api/orders')
-    .then(response => {
-      return response.json()
-    }).then(orders => this.setState({ orders }))
-  }
 
   render() {
 
     return (
 
-      <div class="App">
+      <div className="App">
         <img src="https://i.imgur.com/jbzs690.png" alt="pixida"/>
         <h1>PIXIDA</h1>
 
-      <div class="App">
-      {this.state.orders.length === 0 ?
-        "LOL"  :
-        <OrderShow order={this.state.orders[0]}/>}
-        <Orders orders={this.state.orders}/>
-        <Waiting />
-        <Claimed />
+        <div className="App">
+          <Waiting orders={orders}/>
+          <Claimed orders={orders}/>
+
         </div>
 
       </div>
