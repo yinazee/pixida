@@ -1,140 +1,28 @@
 import React, { Component } from 'react';
-// import Orders from './Orders'
-import Waiting from './Waitings'
-import Claimed from './Claimed'
+import Orders from './Orders'
+// import Waiting from './Waitings'
+// import Claimed from './Claimed'
 import './App.css';
-
-
-const orders = [
-  {
-    customer: {
-      first_name: "Maggie",
-      last_name: "Price"
-    },
-    item: {
-      name: "Ring"
-    },
-    service: {
-      name: "Engraving"
-    },
-    status: {
-      boolean: "Claim"
-    }
-  },
-  {
-    customer: {
-      first_name: "Scott",
-      last_name: "Yu"
-    },
-    item: {
-      name: "Champagne Glasses"
-    },
-    service: {
-      name: "Embossing"
-    },
-    status: {
-      boolean: "Claim"
-    }
-  },
-  {
-    customer: {
-      first_name: "Scott",
-      last_name: "Yu"
-    },
-    item: {
-      name: "Champagne Glasses"
-    },
-    service: {
-      name: "Embossing"
-    },
-    status: {
-      boolean: "Claim"
-    }
-  },
-  {
-    customer: {
-      first_name: "Scott",
-      last_name: "Yu"
-    },
-    item: {
-      name: "Champagne Glasses"
-    },
-    service: {
-      name: "Embossing"
-    },
-    status: {
-      boolean: "Claim"
-    }
-  },
-  {
-    customer: {
-      first_name: "Scott",
-      last_name: "Yu"
-    },
-    item: {
-      name: "Champagne Glasses"
-    },
-    service: {
-      name: "Embossing"
-    },
-    status: {
-      boolean: "Claim"
-    }
-  },
-  {
-    customer: {
-      first_name: "Scott",
-      last_name: "Yu"
-    },
-    item: {
-      name: "Champagne Glasses"
-    },
-    service: {
-      name: "Embossing"
-    },
-    status: {
-      boolean: "Claim"
-    }
-  },
-  {
-    customer: {
-      first_name: "Scott",
-      last_name: "Yu"
-    },
-    item: {
-      name: "Champagne Glasses"
-    },
-    service: {
-      name: "Embossing"
-    },
-    status: {
-      boolean: "Claim"
-    }
-  },
-  {
-    customer: {
-      first_name: "Scott",
-      last_name: "Yu"
-    },
-    item: {
-      name: "Champagne Glasses"
-    },
-    service: {
-      name: "Embossing"
-    },
-    status: {
-      boolean: "Claim"
-    }
-  }
-]
 
 
 class App extends Component {
 
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      orders: []
+    }
+  }
+
+componentDidMount() {
+  fetch('http://localhost:3001/api/orders')
+  .then(response => response.json())
+  .then(orders => this.setState({ orders }))
+}
 
   render() {
-
+console.log(this.state)
     return (
 
       <div className="App">
@@ -142,8 +30,7 @@ class App extends Component {
         <h1>PIXIDA</h1>
 
         <div className="App">
-          <Waiting orders={orders}/>
-          <Claimed orders={orders}/>
+          <Orders orders={this.state.orders}/>
 
         </div>
 
