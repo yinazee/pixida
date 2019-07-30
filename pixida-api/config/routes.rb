@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :statuses
   resources :customers
   resources :items
   resources :services
@@ -10,5 +11,6 @@ Rails.application.routes.draw do
     resources :customers
     resources :items
     resources :services
+    resources :statuses
   end
 end
