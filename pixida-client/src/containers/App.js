@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import Orders from './Orders'
+import OrderForm from './OrderForm'
 import Waiting from './Waiting'
 import Claimed from './Claimed'
 import './App.css';
@@ -30,6 +31,7 @@ componentDidMount() {
         <h1>PIXIDA</h1>
 
         <div className="App">
+          <OrderForm />
           <Waiting orders={this.state.orders}/>
           <Claimed orders={this.state.orders}/>
 
