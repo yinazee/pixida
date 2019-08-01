@@ -3,6 +3,7 @@ class OrdersController < ApiController
 
   # GET /orders
   def index
+    # binding.pry
     @orders = Order.all
 
     render json: @orders
@@ -15,11 +16,12 @@ class OrdersController < ApiController
 
   # POST /orders
   def create
-    @order = Order.new(order_params)
+    @order = Order.new
+    # (order_params)
 
 
     if @order.save
-      render json: @order, status: :created, location: @order
+      render json: @order
     else
       render json: @order.errors, status: :unprocessable_entity
     end
@@ -46,7 +48,7 @@ class OrdersController < ApiController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def order_params
-      params.require(:order).permit(:customer_id, :service_type, :item_type, :comeback)
-    end
+    # def order_params
+    #   params.require(:order).permit(:customer_id, :service_type, :item_type, :status)
+    # end
 end

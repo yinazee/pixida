@@ -25,13 +25,13 @@ const Waiting = (props) => (
     <div className="tbl-content">
       <table cellPadding="0" cellSpacing="0" border="0">
         {props.orders.map(order =>
-          <tbody>
+          <tbody key={order.id}>
             <tr>
             <td>{order.customer.first_name}</td>
             <td>{order.customer.last_name}</td>
             <td>{order.item.name}</td>
             <td>{order.service.name}</td>
-            <td>{order.status.boolean}</td>
+            <td>{order.status}</td>
             </tr>
           </tbody>
         )}

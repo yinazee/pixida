@@ -13,15 +13,6 @@ class ItemsController < ApiController
     render json: @item
   end
 
-  # PATCH/PUT /items/1
-  def update
-    if @item.update(item_params)
-      render json: @item
-    else
-      render json: @item.errors, status: :unprocessable_entity
-    end
-  end
-
   # DELETE /items/1
   def destroy
     @item.destroy
