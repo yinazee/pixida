@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import './table.css'
 
 
 class Waiting extends Component {
+
+  componentDidMount() {
+    this.props.dispatch({
+      type: "GET_ORDER_SUCCESS",
+      orders: [ {first_name: "test", last_name: "testtest", item: "Ring", service: "Engraving", Status: true} ]
+    })
+  }
 
   render() {
 
@@ -47,5 +55,10 @@ class Waiting extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return ({
+    orders: state.orders
+  })
+}
 
-export default Waiting
+export default connect(mapStateToProps)(Waiting)

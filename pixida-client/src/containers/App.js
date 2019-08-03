@@ -7,19 +7,19 @@ import './App.css';
 
 
 class App extends Component {
-
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      orders: []
-    }
-  }
+  //
+  // constructor(props) {
+  //   super(props)
+  //
+  //   this.state = {
+  //     orders: []
+  //   }
+  // }
 
 componentDidMount() {
   fetch('http://localhost:3000/api/orders')
   .then(response => response.json())
-  .then(orders => this.setState({ orders }))
+  // .then(orders => this.setState({ orders }))
 }
 
   render() {
@@ -32,8 +32,8 @@ componentDidMount() {
 
         <div className="App">
           <OrderForm />
-          <Waiting orders={this.state.orders}/>
-          <Claimed orders={this.state.orders}/>
+          <Waiting />
+          <Claimed />
 
         </div>
 
