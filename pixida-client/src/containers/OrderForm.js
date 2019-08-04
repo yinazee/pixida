@@ -5,7 +5,7 @@ class OrderForm extends Component {
   render() {
     return (
       <div>
-      New Order
+      New Order!
       <form>
       </form>
       </div>

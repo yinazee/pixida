@@ -31,7 +31,7 @@ const Claimed = (props) => (
             <td>{order.customer.last_name}</td>
             <td>{order.item.name}</td>
             <td>{order.service.name}</td>
-            <td>{order.status}</td>
+            <td>Finish</td>
             </tr>
           </tbody>
         )}

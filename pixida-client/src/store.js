@@ -1,15 +1,23 @@
-import { createStore, applyMiddleware, compose} from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 
-const orders = ( state = [], action ) => {
+const ordersReducer = ( state = [], action ) => {
   switch(action.type) {
     case 'GET_ORDER_SUCCESS':
-      return action.order
+      return action.orders
 
       default:
         return state;
   }
 }
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const order = ordersReducer()
-console.log(order)
+const reducers = combineReducers({
+  orders: ordersReducer
+})
+
+export default createStore(
+  reducers,
+  composeEnhancers(applyMiddleware(thunk))
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
