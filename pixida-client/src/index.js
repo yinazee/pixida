@@ -1,19 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-// import { createStore, applyMiddleware, compose} from 'redux';
-// import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, compose, combineReducers} from 'redux';
+import thunk from 'redux-thunk';
 import App from './containers/App'
-import store from './store.js'
+import orders from './reducers/orders'
+// import store from './store.js'
 
-console.log(store)
+// console.log(store)
 // debugger
-// const enhancer = compose(
-//     applyMiddleware(thunk),
-//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-//   )
+const enhancer = compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 
 // const store = createStore(enhancer)
+
+const reducers = combineReducers({
+  orders: orders
+})
+
+const store = createStore(
+  reducers, enhancer
+);
 
 ReactDOM.render(
   <Provider store={store}>

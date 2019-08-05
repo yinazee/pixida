@@ -3,24 +3,28 @@ import React, { Component } from 'react';
 import OrderForm from './OrderForm'
 import Waiting from './Waiting'
 import Claimed from './Claimed'
+// import { getOrders } from '../actions/orders'
 import './App.css';
 
 
+
 class App extends Component {
+  //
+  // constructor(props) {
+  //   super(props)
+  //
+  //   this.state = {
+  //     orders: []
+  //   }
+  // }
 
-  constructor(props) {
-    super(props)
+// componentDidMount() {
+//   fetch('http://localhost:3000/api/orders')
+//   .then(response => response.json())
+//   .then(orders => this.setState({ orders }))
+// }
 
-    this.state = {
-      orders: []
-    }
-  }
 
-componentDidMount() {
-  fetch('http://localhost:3000/api/orders')
-  .then(response => response.json())
-  .then(orders => this.setState({ orders }))
-}
 
   render() {
     // debugger
@@ -33,8 +37,8 @@ componentDidMount() {
 
         <div className="App">
           <OrderForm />
-          <Waiting orders={this.state.orders}/>
-          <Claimed orders={this.state.orders}/>
+          <Waiting />
+          <Claimed />
 
         </div>
 
@@ -44,4 +48,12 @@ componentDidMount() {
 }
 
 
-export default App;
+
+// const mapStateToProps = (state) => {
+//   return({
+//     orders: state.orders
+//   })
+// }
+
+
+export default App

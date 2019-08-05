@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import OrderCard from '../components/OrderCard'
+import { getOrders } from '../actions/orders'
 import './table.css'
 
 
 class Waiting extends Component {
 
+  componentDidMount() {
+    // debugger
+    this.getorders()
+  }
+
   render() {
     return(
       <section>
-
         <h3>Customers Claimed</h3>
-
         <div className="tbl-header">
           <table cellPadding="0" cellSpacing="0" border="0">
              <thead>
@@ -36,11 +41,13 @@ class Waiting extends Component {
       </section>
     )
   }
+}
 
+const mapStateToProps = (state) => {
+  return({
+    orders: state.orders
+  })
 }
 
 
-
-
-
-export default Waiting
+export default connect(mapStateToProps, { getOrders })(Waiting)
