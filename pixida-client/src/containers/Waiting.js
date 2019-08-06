@@ -9,7 +9,7 @@ class Waiting extends Component {
 
   componentDidMount() {
     // debugger
-    this.getorders()
+    this.props.getOrders()
   }
 
   render() {
