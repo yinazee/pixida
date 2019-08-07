@@ -5,6 +5,7 @@ import { createStore, applyMiddleware, compose, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 import App from './containers/App'
 import orders from './reducers/orders'
+import orderFormData from './reducers/orderFormData'
 // import store from './store.js'
 
 // console.log(store)
@@ -17,7 +18,8 @@ const enhancer = compose(
 // const store = createStore(enhancer)
 
 const reducers = combineReducers({
-  orders: orders
+  orders,
+  orderFormData
 })
 
 const store = createStore(
