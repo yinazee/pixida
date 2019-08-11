@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const OrderCard = ({ order }) => {
-  console.log({order})
+  // console.log({order})
   return (
     <tbody>
       <tr>
