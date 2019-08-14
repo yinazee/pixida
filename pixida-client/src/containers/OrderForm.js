@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateOrderFormData } from '../actions/orderForm'
+import { createOrder } from '../actions/orders'
 
 class OrderForm extends Component {
 
@@ -12,6 +13,11 @@ class OrderForm extends Component {
     this.props.updateOrderFormData(currentOrderFormData)
   }
 
+  handleOnSubmit = event => {
+    event.preventDefault()
+    this.props.createOrder(this.props.orderFormData)
+  }
+
   render() {
     const { first_name, last_name, item, service } = this.props.orderFormData
     // console.log(this.props.orderFormData)
@@ -19,10 +25,8 @@ class OrderForm extends Component {
     return (
 
       <div>
-      New Order!
-      <form>
-
-
+      Add a New Order to the Queue
+      <form onSubmit={this.handleOnSubmit}>
         <div>
         <label htmlFor="first_name">First Name:</label>
         <input
@@ -63,6 +67,7 @@ class OrderForm extends Component {
         />
         </div>
 
+        <button type="submit">Add Order</button>
       </form>
       </div>
     )
@@ -75,4 +80,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {updateOrderFormData})(OrderForm)
+export default connect(mapStateToProps, {
+  updateOrderFormData,
+  createOrder
+})(OrderForm)

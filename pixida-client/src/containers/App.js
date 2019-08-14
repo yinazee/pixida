@@ -9,22 +9,6 @@ import './App.css';
 
 
 class App extends Component {
-  //
-  // constructor(props) {
-  //   super(props)
-  //
-  //   this.state = {
-  //     orders: []
-  //   }
-  // }
-
-// componentDidMount() {
-//   fetch('http://localhost:3000/api/orders')
-//   .then(response => response.json())
-//   .then(orders => this.setState({ orders }))
-// }
-
-
 
   render() {
     // debugger
@@ -46,14 +30,6 @@ class App extends Component {
     )
   }
 }
-
-
-
-// const mapStateToProps = (state) => {
-//   return({
-//     orders: state.orders
-//   })
-// }
 
 
 export default App

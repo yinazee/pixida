@@ -16,8 +16,7 @@ class OrdersController < ApiController
 
   # POST /orders
   def create
-    @order = Order.new
-    # (order_params)
+    @order = Order.new(order_params)
 
 
     if @order.save
@@ -48,7 +47,7 @@ class OrdersController < ApiController
     end
 
     # Only allow a trusted parameter "white list" through.
-    # def order_params
-    #   params.require(:order).permit(:customer_id, :service_type, :item_type, :status)
-    # end
+    def order_params
+      params.require(:order).permit(:customer_id, :service_type, :item_type, :status)
+    end
 end
