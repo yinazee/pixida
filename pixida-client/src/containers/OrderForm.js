@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateOrderFormData } from '../actions/orderForm'
 import { createOrder } from '../actions/orders'
+import { myFunction } from './dropdown'
+import './dropdown.css'
 
 class OrderForm extends Component {
 
@@ -17,6 +19,8 @@ class OrderForm extends Component {
     event.preventDefault()
     this.props.createOrder(this.props.orderFormData)
   }
+
+
 
   render() {
     const { first_name, last_name, item, service } = this.props.orderFormData
@@ -47,14 +51,14 @@ class OrderForm extends Component {
         />
         </div>
 
-        <div>
-        <label htmlFor="item">Item:</label>
-        <input
-          type="text"
-          onChange={this.handleOnChange}
-          name="item"
-          value={item}
-        />
+
+
+        <div className="dropdown">
+        <label htmlFor="last_name">Item:</label>
+          <button onClick={myFunction()} className="dropbtn">Select One:</button>
+            <div id="myDropdown" className="dropdown-content">
+              <option value={item.id} id="1">{item.name}</option>
+          </div>
         </div>
 
         <div>

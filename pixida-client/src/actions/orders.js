@@ -17,7 +17,6 @@ export function getOrders() {
 }
 
 export function createOrder(order) {
-  debugger
   return dispatch => {
     return fetch('http://localhost:3000/api/orders', {
         method: 'POST',

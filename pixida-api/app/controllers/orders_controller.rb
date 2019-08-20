@@ -16,6 +16,7 @@ class OrdersController < ApiController
 
   # POST /orders
   def create
+    binding.pry
     @order = Order.new(order_params)
 
 
