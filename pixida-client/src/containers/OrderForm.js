@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateOrderFormData } from '../actions/orderForm'
 import { createOrder } from '../actions/orders'
-import { myFunction } from './dropdown'
-import './dropdown.css'
+import ItemInput from '../components/ItemInput'
+import ServiceInput from '../components/ServiceInput'
+// import { myFunction } from './dropdown'
+// import './dropdown.css'
 
 class OrderForm extends Component {
 
@@ -27,53 +29,59 @@ class OrderForm extends Component {
     // console.log(this.props.orderFormData)
 
     return (
-
-      <div>
-      Add a New Order to the Queue
-      <form onSubmit={this.handleOnSubmit}>
-        <div>
-        <label htmlFor="first_name">First Name:</label>
-        <input
-          type="text"
-          onChange={this.handleOnChange}
-          name="first_name"
-          value={first_name}
-        />
+      <section >
+        <h3>Add Order to Queue</h3>
+        <div className="tbl-header">
+          <table>
+             <thead>
+               <tr>
+                 <th>First Name</th>
+                 <th>Last Name</th>
+                 <th>Item</th>
+                 <th>Service</th>
+               </tr>
+             </thead>
+          </table>
         </div>
 
-        <div>
-        <label htmlFor="last_name">Last Name:</label>
-        <input
-          type="text"
-          onChange={this.handleOnChange}
-          name="last_name"
-          value={last_name}
-        />
-        </div>
+        <form onSubmit={this.handleOnSubmit}>
+          <div className="neworder-tbl">
+          <table cellPadding="0" cellSpacing="0" border="0">
+            <tbody>
+              <tr>
+                <td>
+                <input
+                  type="text"
+                  onChange={this.handleOnChange}
+                  name="first_name"
+                  value={first_name}>
+                </input>
+                </td>
 
+                <td>
+                <input
+                  type="text"
+                  onChange={this.handleOnChange}
+                  name="last_name"
+                  value={last_name}>
+                </input>
+                </td>
 
+                <td>
+                  <ItemInput/>
+                </td>
 
-        <div className="dropdown">
-        <label htmlFor="last_name">Item:</label>
-          <button onClick={myFunction()} className="dropbtn">Select One:</button>
-            <div id="myDropdown" className="dropdown-content">
-              <option value={item.id} id="1">{item.name}</option>
+                <td>
+                  <ServiceInput/>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
           </div>
-        </div>
-
-        <div>
-        <label htmlFor="service">Service:</label>
-        <input
-          type="text"
-          onChange={this.handleOnChange}
-          name="service"
-          value={service}
-        />
-        </div>
-
-        <button type="submit">Add Order</button>
-      </form>
-      </div>
+          <button className="button" type="submit">Add Order</button>
+        </form>
+      </section>
     )
   }
 }

@@ -15,7 +15,7 @@ class Waiting extends Component {
   render() {
     return(
       <section>
-        <h3>Customers Claimed</h3>
+        <h3>Customers Queue</h3>
         <div className="tbl-header">
           <table cellPadding="0" cellSpacing="0" border="0">
              <thead>
