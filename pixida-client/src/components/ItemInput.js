@@ -1,21 +1,15 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
-class ItemInput extends React.Component {
 
-  render() {
-
-    return (
-      <div>
-        <select>
-          <option>select an item</option>
-          <option>Watch</option>
-          <option>Ring</option>
-        </select>
-
-      </div>
-    )
-  }
+const ItemInput = ({ item }) => {
+  console.log({item})
+      return (
+        <div>
+          <select>
+            <option>{item.name}</option>
+          </select>
+        </div>
+      )
 }
 
-export default connect(null)(ItemInput)
+export default ItemInput

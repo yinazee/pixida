@@ -3,11 +3,16 @@ import { connect } from 'react-redux'
 import { updateOrderFormData } from '../actions/orderForm'
 import { createOrder } from '../actions/orders'
 import ItemInput from '../components/ItemInput'
+import { getItems } from '../actions/items'
 import ServiceInput from '../components/ServiceInput'
-// import { myFunction } from './dropdown'
-// import './dropdown.css'
+
 
 class OrderForm extends Component {
+
+  componentDidMount() {
+    // debugger
+    this.props.getItems()
+  }
 
   handleOnChange = event => {
     const { name, value } = event.target;
@@ -23,10 +28,10 @@ class OrderForm extends Component {
   }
 
 
-
   render() {
     const { first_name, last_name, item, service } = this.props.orderFormData
-    // console.log(this.props.orderFormData)
+    // const items = this.props.getItems
+    console.log(this.props.items)
 
     return (
       <section >
@@ -68,7 +73,9 @@ class OrderForm extends Component {
                 </td>
 
                 <td>
-                  <ItemInput/>
+                {this.props.items.map(item =>
+                  <ItemInput key={item.id} item={item}/>
+                )}
                 </td>
 
                 <td>
@@ -79,20 +86,24 @@ class OrderForm extends Component {
             </tbody>
           </table>
           </div>
-          <button className="button" type="submit">Add Order</button>
+          <button className="tbl-header" type="submit">Add Order</button>
         </form>
       </section>
     )
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    orderFormData: state.orderFormData
-  }
+const mapStateToProps = (state) => {
+  return ({
+    orderFormData: state.orderFormData,
+    items: state.items
+  })
 }
+
+
 
 export default connect(mapStateToProps, {
   updateOrderFormData,
-  createOrder
+  createOrder,
+  getItems
 })(OrderForm)
