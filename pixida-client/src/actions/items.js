@@ -7,7 +7,7 @@ const setItems = items => {
 
 export function getItems() {
   return dispatch => {
-    return fetch('http://localhost:3000/api/orders')
+    return fetch('http://localhost:3000/api/items')
       .then(response => response.json())
       .then(items => dispatch(setItems(items)))
       .catch(error => console.log(error))

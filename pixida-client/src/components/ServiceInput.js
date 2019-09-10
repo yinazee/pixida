@@ -1,21 +1,11 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
-class ServiceInput extends React.Component {
 
-  render() {
+const ServiceInput = ({ service }) => {
 
-    return (
-      <div>
-        <select>
-          <option>select a service</option>
-          <option>Steam Cleaning</option>
-          <option>Polishing</option>
-        </select>
-      </div>
-    )
-  }
-
+      return (
+        <option>{service.name}</option>
+      )
 }
 
-export default connect(null)(ServiceInput)
+export default ServiceInput

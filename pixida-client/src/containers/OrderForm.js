@@ -4,6 +4,7 @@ import { updateOrderFormData } from '../actions/orderForm'
 import { createOrder } from '../actions/orders'
 import ItemInput from '../components/ItemInput'
 import { getItems } from '../actions/items'
+import { getServices } from '../actions/services'
 import ServiceInput from '../components/ServiceInput'
 
 
@@ -12,6 +13,7 @@ class OrderForm extends Component {
   componentDidMount() {
     // debugger
     this.props.getItems()
+    this.props.getServices()
   }
 
   handleOnChange = event => {
@@ -29,8 +31,8 @@ class OrderForm extends Component {
 
 
   render() {
+    // debugger
     const { first_name, last_name, item, service } = this.props.orderFormData
-    // const items = this.props.getItems
     console.log(this.props.items)
 
     return (
@@ -73,13 +75,28 @@ class OrderForm extends Component {
                 </td>
 
                 <td>
-                {this.props.items.map(item =>
-                  <ItemInput key={item.id} item={item}/>
-                )}
+                  <select>
+                  <option>Select an Item</option>
+                  {this.props.items.map(item =>
+                    <ItemInput key={item.id} item={item}
+                      name="item"
+                      value={item}
+                    />
+                  )}
+                  </select>
                 </td>
 
+
                 <td>
-                  <ServiceInput/>
+                  <select>
+                  <option>Select an Item</option>
+                  {this.props.services.map(service =>
+                    <ServiceInput key={service.id} service={service}
+                      name="service"
+                      value={service}
+                    />
+                  )}
+                  </select>
                 </td>
 
               </tr>
@@ -96,7 +113,9 @@ class OrderForm extends Component {
 const mapStateToProps = (state) => {
   return ({
     orderFormData: state.orderFormData,
-    items: state.items
+    items: state.items,
+    services: state.services
+
   })
 }
 
@@ -105,5 +124,6 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   updateOrderFormData,
   createOrder,
-  getItems
+  getItems,
+  getServices
 })(OrderForm)

@@ -16,6 +16,21 @@ export function getOrders() {
   }
 }
 
+export function updateOrder(order) {
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/orders/${order.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ order: order })
+    })
+      .then(response => response.json())
+      .then(order => {debugger})
+      .catch(error => console.log(error))
+  }
+}
+
 export function createOrder(order) {
   return dispatch => {
     return fetch('http://localhost:3000/api/orders', {

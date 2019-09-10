@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import OrderForm from './OrderForm'
 import Waiting from './Waiting'
 import Claimed from './Claimed'
+import Finished from './Finished'
 // import { getOrders } from '../actions/orders'
 import './App.css';
 
@@ -23,6 +24,7 @@ class App extends Component {
           <OrderForm />
           <Waiting />
           <Claimed />
+          <Finished />
 
         </div>
 

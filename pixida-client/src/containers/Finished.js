@@ -5,16 +5,14 @@ import { getOrders } from '../actions/orders'
 import './table.css'
 
 
-class Waiting extends Component {
+class Finished extends Component {
 
-  componentDidMount() {
-    this.props.getOrders()
-  }
+
 
   render() {
     return(
       <section>
-        <h3>Customers Queue</h3>
+        <h3>Finished</h3>
         <div className="tbl-header">
           <table cellPadding="0" cellSpacing="0" border="0">
              <thead>
@@ -31,13 +29,7 @@ class Waiting extends Component {
 
         <div className="tbl-content">
           <table cellPadding="0" cellSpacing="0" border="0">
-          {this.props.orders.map(order =>
-            order.status ?
-            null
-            :
-            <OrderCard key={order.id} order={order}/>
-
-          )}
+      
           </table>
         </div>
 
@@ -53,4 +45,5 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { getOrders })(Waiting)
+export default connect(mapStateToProps, { getOrders })(Finished)
+// export default connect(mapStateToProps)(Claimed)

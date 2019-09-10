@@ -24,7 +24,7 @@ Service.create(name: "Etching")
 Service.create(name: "Embossing")
 Service.create(name: "Engraving")
 
-Order.create(customer_id: 1, item_id: 2, service_id: 1)
+Order.create(customer_id: 1, item_id: 2, service_id: 1, status: true)
 Order.create(customer_id: 2, item_id: 3, service_id: 4, status: false)
 Order.create(customer_id: 3, item_id: 2, service_id: 2, status: true)
 Order.create(customer_id: 4, item_id: 4, service_id: 3, status: false)

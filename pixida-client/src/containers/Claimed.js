@@ -8,20 +8,12 @@ import './table.css'
 class Claimed extends Component {
 
   componentDidMount() {
-    // this.props.dispatch({
-    //   type: "GET_ORDER_SUCCESS",
-    //   orders: [ {customer: {
-    //               first_name: "Sophie",
-    //               last_name: "Rhinestone"
-    //               },
-    //               item: {
-    //               name: "Blanket"
-    //               },
-    //               service: {
-    //               name: "Emboss"
-    //               }} ]
-    //           })
+    // debugger
+    this.props.getOrders()
+
   }
+
+
 
   render() {
     return(
@@ -44,7 +36,10 @@ class Claimed extends Component {
         <div className="tbl-content">
           <table cellPadding="0" cellSpacing="0" border="0">
             {this.props.orders.map(order =>
+              order.status ?
               <OrderCard key={order.id} order={order}/>
+              :
+              null
             )}
           </table>
         </div>
@@ -62,4 +57,3 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, { getOrders })(Claimed)
-// export default connect(mapStateToProps)(Claimed)

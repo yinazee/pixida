@@ -1,14 +1,14 @@
 export default (state = {
   status: false,
   customer: {
-  first_name: "",
-  last_name: ""
+    first_name: "",
+    last_name: ""
   },
   item: {
-  id: "",
+    name: "",
   },
   service: {
-  id: "",
+    name: "",
   }
 }, action) => {
 
