@@ -11,7 +11,6 @@ import ServiceInput from '../components/ServiceInput'
 class OrderForm extends Component {
 
   componentDidMount() {
-    // debugger
     this.props.getItems()
     this.props.getServices()
   }
@@ -31,9 +30,8 @@ class OrderForm extends Component {
 
 
   render() {
-    // debugger
     const { first_name, last_name, item, service } = this.props.orderFormData
-    console.log(this.props.items)
+
 
     return (
       <section >
@@ -76,13 +74,17 @@ class OrderForm extends Component {
 
                 <td>
                   <select>
+
                   <option>Select an Item</option>
-                  {this.props.items.map(item =>
+                    {this.props.items.map(item =>
                     <ItemInput key={item.id} item={item}
-                      name="item"
-                      value={item}
+                    type="select"
+                    onChange={this.handleOnChange}
+                    name="item"
+                    value={item}
                     />
                   )}
+
                   </select>
                 </td>
 
@@ -92,6 +94,7 @@ class OrderForm extends Component {
                   <option>Select an Item</option>
                   {this.props.services.map(service =>
                     <ServiceInput key={service.id} service={service}
+                      onChange={this.handleOnChange}
                       name="service"
                       value={service}
                     />

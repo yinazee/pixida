@@ -16,7 +16,7 @@ class OrdersController < ApiController
 
   # POST /orders
   def create
-    binding.pry
+
     @order = Order.new(order_params)
 
 
@@ -29,6 +29,7 @@ class OrdersController < ApiController
 
   # PATCH/PUT /orders/1
   def update
+    # binding.pry
     if @order.update(order_params)
       render json: @order
     else

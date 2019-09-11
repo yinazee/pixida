@@ -26,7 +26,7 @@ export function updateOrder(order) {
       body: JSON.stringify({ order: order })
     })
       .then(response => response.json())
-      .then(order => {debugger})
+      .then(order => dispatch(updateOrder(order)))
       .catch(error => console.log(error))
   }
 }

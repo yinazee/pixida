@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import { updateOrder } from '../actions/orders'
 
 
-const OrderCard = ({ order }) => {
+const OrderCard = ({ order, updateOrder }) => {
 
     const handleOnClick = event => {
-      console.log(order.status)
+      console.log(event.target)
       let status = order.status
       order.status = !status
       updateOrder(order)
@@ -26,4 +26,17 @@ const OrderCard = ({ order }) => {
   )
 }
 
-export default OrderCard
+// const mapDispatchToProps = (state) => {
+//   return({
+//     orders: state.orders
+//   })
+// }
+
+const mapStateToProps = (state) => {
+  return {
+    orders: state.orders
+  };
+};
+
+
+export default connect(mapStateToProps, {updateOrder})(OrderCard)
