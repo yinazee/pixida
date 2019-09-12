@@ -16,6 +16,13 @@ export function getOrders() {
   }
 }
 
+export function updateOrderStore(order) {
+  return {
+    type: "UPDATE_ORDER",
+    order
+  }
+}
+
 export function updateOrder(order) {
   return dispatch => {
     return fetch(`http://localhost:3000/api/orders/${order.id}`, {
@@ -26,8 +33,12 @@ export function updateOrder(order) {
       body: JSON.stringify({ order: order })
     })
       .then(response => response.json())
-      .then(order => dispatch(updateOrder(order)))
-      .catch(error => console.log(error))
+      .then(order =>
+        // console.log(order)
+        dispatch(updateOrderStore(order))
+      )
+      // .catch(error => console.log(error))
+
   }
 }
 

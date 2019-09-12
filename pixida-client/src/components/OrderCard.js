@@ -31,12 +31,12 @@ const OrderCard = ({ order, updateOrder }) => {
 //     orders: state.orders
 //   })
 // }
+// 
+// const mapStateToProps = (state) => {
+//   return {
+//     orders: state.orders
+//   };
+// };
 
-const mapStateToProps = (state) => {
-  return {
-    orders: state.orders
-  };
-};
 
-
-export default connect(mapStateToProps, {updateOrder})(OrderCard)
+export default connect(null, {updateOrder})(OrderCard)
