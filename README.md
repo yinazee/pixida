@@ -1,2 +1,2 @@
 # pixida
-customer registration service for jewelry repair
+customer registration service for jewelry repairs
