@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import OrderCard from '../components/OrderCard'
+import InProgressCard from '../components/InProgressCard'
 import { getOrders } from '../actions/orders'
 import './table.css'
 
 
-class Claimed extends Component {
+class InProgress extends Component {
 
   componentDidMount() {
     // debugger
@@ -37,7 +37,7 @@ class Claimed extends Component {
           <table cellPadding="0" cellSpacing="0" border="0">
             {this.props.orders.map(order =>
               order.status ?
-              <OrderCard key={order.id} order={order}/>
+              <InProgressCard key={order.id} order={order}/>
               :
               null
             )}
@@ -56,4 +56,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { getOrders })(Claimed)
+export default connect(mapStateToProps, { getOrders })(InProgress)

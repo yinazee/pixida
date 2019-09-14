@@ -2,8 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateOrder } from '../actions/orders'
 
+// order.status is true
 
-const OrderCard = ({ order, updateOrder }) => {
+const InProgressCard = ({ order, updateOrder }) => {
+
 
     const handleOnClick = event => {
       console.log(event.target)
@@ -26,17 +28,5 @@ const OrderCard = ({ order, updateOrder }) => {
   )
 }
 
-// const mapDispatchToProps = (state) => {
-//   return({
-//     orders: state.orders
-//   })
-// }
-// 
-// const mapStateToProps = (state) => {
-//   return {
-//     orders: state.orders
-//   };
-// };
 
-
-export default connect(null, {updateOrder})(OrderCard)
+export default connect(null, {updateOrder})(InProgressCard)

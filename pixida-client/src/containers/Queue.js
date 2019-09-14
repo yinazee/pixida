@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import OrderCard from '../components/OrderCard'
+import QueueCard from '../components/QueueCard'
 import { getOrders } from '../actions/orders'
 import './table.css'
 
 
-class Waiting extends Component {
+class Queue extends Component {
 
   componentDidMount() {
     this.props.getOrders()
@@ -23,6 +23,8 @@ class Waiting extends Component {
                  <th>Last Name</th>
                  <th>Item</th>
                  <th>Service</th>
+                 <th>Edit</th>
+                 <th>Delete</th>
                  <th>Status</th>
                </tr>
              </thead>
@@ -35,7 +37,7 @@ class Waiting extends Component {
             order.status ?
             null
             :
-            <OrderCard key={order.id} order={order}/>
+            <QueueCard key={order.id} order={order}/>
 
           )}
           </table>
@@ -53,4 +55,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { getOrders })(Waiting)
+export default connect(mapStateToProps, { getOrders })(Queue)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import OrderCard from '../components/OrderCard'
+import FinishedCard from '../components/FinishedCard'
 import { getOrders } from '../actions/orders'
 import './table.css'
 
@@ -29,7 +29,7 @@ class Finished extends Component {
 
         <div className="tbl-content">
           <table cellPadding="0" cellSpacing="0" border="0">
-      
+
           </table>
         </div>
 

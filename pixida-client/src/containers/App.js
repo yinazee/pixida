@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import Orders from './Orders'
 import OrderForm from './OrderForm'
-import Waiting from './Waiting'
-import Claimed from './Claimed'
+import Queue from './Queue'
+import InProgress from './InProgress'
 import Finished from './Finished'
 // import { getOrders } from '../actions/orders'
 import './App.css';
@@ -22,8 +22,8 @@ class App extends Component {
 
         <div className="App">
           <OrderForm />
-          <Waiting />
-          <Claimed />
+          <Queue />
+          <InProgress />
           <Finished />
 
         </div>
