@@ -6,19 +6,18 @@ import './table.css'
 
 
 class InProgress extends Component {
+  // order.status are true
 
   componentDidMount() {
     // debugger
     this.props.getOrders()
-
   }
-
 
 
   render() {
     return(
       <section>
-        <h3>Customers Claimed</h3>
+        <h3>In Progress</h3>
         <div className="tbl-header">
           <table cellPadding="0" cellSpacing="0" border="0">
              <thead>
@@ -27,6 +26,8 @@ class InProgress extends Component {
                  <th>Last Name</th>
                  <th>Item</th>
                  <th>Service</th>
+                 <th>Edit</th>
+                 <th>Delete</th>
                  <th>Status</th>
                </tr>
              </thead>
@@ -40,6 +41,7 @@ class InProgress extends Component {
               <InProgressCard key={order.id} order={order}/>
               :
               null
+  
             )}
           </table>
         </div>

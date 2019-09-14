@@ -7,7 +7,12 @@ import './table.css'
 
 class Finished extends Component {
 
+  // order.statuses remain true
 
+  componentDidMount() {
+    // debugger
+    this.props.getOrders()
+  }
 
   render() {
     return(
@@ -29,6 +34,10 @@ class Finished extends Component {
 
         <div className="tbl-content">
           <table cellPadding="0" cellSpacing="0" border="0">
+
+            {this.props.orders.map(order =>
+              <FinishedCard key={order.id} order={order}/>
+            )}
 
           </table>
         </div>

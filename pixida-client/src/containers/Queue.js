@@ -6,7 +6,7 @@ import './table.css'
 
 
 class Queue extends Component {
-
+// order.status are false
   componentDidMount() {
     this.props.getOrders()
   }

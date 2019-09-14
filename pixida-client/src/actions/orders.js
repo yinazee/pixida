@@ -42,6 +42,14 @@ export function updateOrder(order) {
   }
 }
 
+
+export function finishOrder(order) {
+  return {
+    type: 'FINISH_ORDER_SUCCESS',
+    order
+  }
+}
+
 export function createOrder(order) {
   return dispatch => {
     return fetch('http://localhost:3000/api/orders', {
