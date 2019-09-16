@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateOrderFormData } from '../actions/orderForm'
 import { createOrder } from '../actions/orders'
-import ItemInput from '../components/ItemInput'
 import { getItems } from '../actions/items'
 import { getServices } from '../actions/services'
-import ServiceInput from '../components/ServiceInput'
+
 
 
 class OrderForm extends Component {
+
 
   componentDidMount() {
     this.props.getItems()
@@ -30,7 +30,7 @@ class OrderForm extends Component {
 
 
   render() {
-    const { first_name, last_name, item, service } = this.props.orderFormData
+    const { firstName, lastName, item, service } = this.props.orderFormData
 
 
     return (
@@ -58,8 +58,8 @@ class OrderForm extends Component {
                 <input
                   type="text"
                   onChange={this.handleOnChange}
-                  name="first_name"
-                  value={first_name}>
+                  name="firstName"
+                  value={firstName}>
                 </input>
                 </td>
 
@@ -67,37 +67,33 @@ class OrderForm extends Component {
                 <input
                   type="text"
                   onChange={this.handleOnChange}
-                  name="last_name"
-                  value={last_name}>
+                  name="lastName"
+                  value={lastName}>
                 </input>
                 </td>
 
                 <td>
-                  <select>
-
-                  <option>Select an Item</option>
-                    {this.props.items.map(item =>
-                    <ItemInput key={item.id} item={item}
-                    type="select"
+                  <select
                     onChange={this.handleOnChange}
                     name="item"
-                    value={item}
-                    />
+                    value={item}>
+                    <option>Select an Item</option>
+                    {this.props.items.map(item =>
+                    <option key={item.id}>{item.name}</option>
                   )}
-
                   </select>
                 </td>
 
 
                 <td>
-                  <select>
+                  <select
+                    onChange={this.handleOnChange}
+                    name="service"
+                    value={service}>
                   <option>Select an Item</option>
                   {this.props.services.map(service =>
-                    <ServiceInput key={service.id} service={service}
-                      onChange={this.handleOnChange}
-                      name="service"
-                      value={service}
-                    />
+                  <option key={service.id}>{service.name}</option>
+
                   )}
                   </select>
                 </td>
@@ -121,8 +117,6 @@ const mapStateToProps = (state) => {
 
   })
 }
-
-
 
 export default connect(mapStateToProps, {
   updateOrderFormData,

@@ -17,7 +17,14 @@ class OrdersController < ApiController
   # POST /orders
   def create
 
-    @order = Order.new(order_params)
+    customer = Customer.find_or_create_by(first_name: params[:order][:firstName], last_name: params[:order][:lastName])
+    # @order = Order.new
+    item = Item.find_by_name(params[:order][:item])
+    service = Service.find_by_name(params[:order][:service])
+
+    @order = customer.orders.build(item: item, service: service)
+
+        binding.pry
 
 
     if @order.save
@@ -50,6 +57,6 @@ class OrdersController < ApiController
 
     # Only allow a trusted parameter "white list" through.
     def order_params
-      params.require(:order).permit(:customer_id, :service_type, :item_type, :status)
+      params.require(:order).permit(:customer_id, :service_id, :item_id, :status)
     end
 end

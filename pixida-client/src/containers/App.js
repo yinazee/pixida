@@ -21,6 +21,7 @@ class App extends Component {
         <h1>PIXIDA</h1>
 
         <div className="App">
+  
           <OrderForm />
           <Queue />
           <InProgress />
