@@ -18,14 +18,10 @@ class OrdersController < ApiController
   def create
 
     customer = Customer.find_or_create_by(first_name: params[:order][:firstName], last_name: params[:order][:lastName])
-    # @order = Order.new
     item = Item.find_by_name(params[:order][:item])
     service = Service.find_by_name(params[:order][:service])
 
     @order = customer.orders.build(item: item, service: service)
-
-        binding.pry
-
 
     if @order.save
       render json: @order

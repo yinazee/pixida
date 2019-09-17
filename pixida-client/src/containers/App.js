@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-// import Orders from './Orders'
 import OrderForm from './OrderForm'
 import Queue from './Queue'
-import InProgress from './InProgress'
 import Finished from './Finished'
-// import { getOrders } from '../actions/orders'
+
 import './App.css';
 
 
@@ -21,10 +19,9 @@ class App extends Component {
         <h1>PIXIDA</h1>
 
         <div className="App">
-  
+
           <OrderForm />
           <Queue />
-          <InProgress />
           <Finished />
 
         </div>

@@ -7,12 +7,10 @@ import './table.css'
 
 class Finished extends Component {
 
-  // order.statuses remain true
-
   componentDidMount() {
-    // debugger
     this.props.getOrders()
   }
+
 
   render() {
     return(
@@ -26,7 +24,8 @@ class Finished extends Component {
                  <th>Last Name</th>
                  <th>Item</th>
                  <th>Service</th>
-                 <th>Status</th>
+                 <th>Edit</th>
+                 <th>Delete</th>
                </tr>
              </thead>
           </table>
@@ -34,11 +33,13 @@ class Finished extends Component {
 
         <div className="tbl-content">
           <table cellPadding="0" cellSpacing="0" border="0">
-
             {this.props.orders.map(order =>
+              order.status ?
               <FinishedCard key={order.id} order={order}/>
-            )}
+              :
+              null
 
+            )}
           </table>
         </div>
 
@@ -55,4 +56,3 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, { getOrders })(Finished)
-// export default connect(mapStateToProps)(Claimed)
