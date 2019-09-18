@@ -10,7 +10,7 @@ let initialState = {
 
 export default (state = initialState, action) => {
 
-console.log(action.orderFormData)
+
 // debugger
   switch(action.type) {
     case 'UPDATED_DATA':

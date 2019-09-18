@@ -10,8 +10,7 @@ import './App.css';
 class App extends Component {
 
   render() {
-    // debugger
-    console.log(this.state)
+
     return (
 
       <div className="App">

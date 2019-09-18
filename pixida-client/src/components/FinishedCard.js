@@ -5,18 +5,6 @@ import { finishOrder } from '../actions/orders'
 
 const FinishedCard = ({ order, finishOrder }) => {
 
-
-
-  const handleOnClick = event => {
-    console.log(event.target)
-    let status = order.status
-    if (order.status = true)
-      finishOrder(order)
-    else {
-      alert("Order hasn't been claimed yet!")
-    }
-  }
-
   return (
     <tbody>
       <tr>

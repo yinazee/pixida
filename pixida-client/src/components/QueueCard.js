@@ -2,20 +2,20 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateOrder } from '../actions/orders'
 
-// order.status is false
 
 const QueueCard = ({ order, updateOrder }) => {
 
 
     const handleOnClick = event => {
-      console.log(event.target)
+
       let status = order.status
       order.status = !status
       updateOrder(order)
     }
 
   return (
-    <tbody>
+
+    <tbody key={order.id}>
       <tr>
       <td>{order.customer.first_name}</td>
       <td>{order.customer.last_name}</td>

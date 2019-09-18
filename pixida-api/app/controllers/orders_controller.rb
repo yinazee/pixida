@@ -21,9 +21,10 @@ class OrdersController < ApiController
     item = Item.find_by_name(params[:order][:item])
     service = Service.find_by_name(params[:order][:service])
 
-    @order = customer.orders.build(item: item, service: service)
 
+    @order = customer.orders.build(item: item, service: service, status: false)
     if @order.save
+
       render json: @order
     else
       render json: @order.errors, status: :unprocessable_entity

@@ -34,7 +34,7 @@ class Queue extends Component {
         <div className="tbl-content">
           <table cellPadding="0" cellSpacing="0" border="0">
           {this.props.orders.map(order =>
-            order.status ?
+            order.status === true ?
             null
             :
             <QueueCard key={order.id} order={order}/>
