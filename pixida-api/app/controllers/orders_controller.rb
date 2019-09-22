@@ -17,7 +17,7 @@ class OrdersController < ApiController
   # POST /orders
   def create
 
-    customer = Customer.find_or_create_by(first_name: params[:order][:firstName], last_name: params[:order][:lastName])
+    customer = Customer.find_or_create_by(name: params[:order][:customer])
     item = Item.find_by_name(params[:order][:item])
     service = Service.find_by_name(params[:order][:service])
 

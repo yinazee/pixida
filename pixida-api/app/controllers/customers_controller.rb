@@ -10,7 +10,7 @@ class CustomersController < ApiController
 
   # GET /customers/1
   def show
-    
+
     render json: @customer
   end
 
@@ -47,6 +47,6 @@ class CustomersController < ApiController
 
     # Only allow a trusted parameter "white list" through.
     def customer_params
-      params.require(:customer).permit(:first_name, :last_name)
+      params.require(:customer).permit(:name)
     end
 end

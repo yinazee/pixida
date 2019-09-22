@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
-Customer.create(first_name: "Scott", last_name: "Yu")
-Customer.create(first_name: "Maggie", last_name: "Price")
-Customer.create(first_name: "Tom", last_name: "Murphy")
-Customer.create(first_name: "Lauren", last_name: "Heinz")
+Customer.create(name: "Scott")
+Customer.create(name: "Stacey")
+Customer.create(name: "Tim")
+Customer.create(name: "Molly")
 
 Item.create(name: "Bracelet")
 Item.create(name: "Necklace")
