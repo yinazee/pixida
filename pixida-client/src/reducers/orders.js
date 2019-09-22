@@ -23,11 +23,14 @@ export default ( state = [], action ) => {
       case 'RESET_NEW_ORDER_FORM':
         return initialState
 
-
-      case 'DELETE_ORDER':
-        // const orders = state.order.filter ( order => order.id !== order.id)
-        // return { ...state, orders}
-        return state.filter(order => order.id === action.OrderId ? false : true)
+        case "DELETE_ORDER":
+          console.log("reducer", action.order)
+              return state.filter(order => order.id === action.order.id ? false : true)
+      //
+      // case 'DELETE_ORDER':
+      //   // const orders = state.order.filter ( order => order.id !== order.id)
+      //   // return { ...state, orders}
+      //   return state.filter(order => order.id === action.OrderId ? false : true)
 
 
       default:

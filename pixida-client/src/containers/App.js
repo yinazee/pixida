@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import OrderForm from './OrderForm'
+import OrderFormCard from '../components/OrderFormCard'
 import Queue from './Queue'
 import Finished from './Finished'
+// import { Route, Switch, withRouter } from 'react-router-dom'
 
 import './App.css';
 
@@ -18,11 +19,9 @@ class App extends Component {
         <h1>PIXIDA</h1>
 
         <div className="App">
-
-          <OrderForm />
+          <OrderFormCard />
           <Queue />
           <Finished />
-
         </div>
 
       </div>

@@ -11,7 +11,20 @@ class Queue extends Component {
     this.props.getOrders()
   }
 
+
+
   render() {
+    console.log("queue", this.props.orders)
+
+
+    const queueOrders = this.props.orders ? this.props.orders.map(order =>
+        order.status ?
+        null
+        :
+      <QueueCard key={order.id} order={order}/>
+    ) : null
+
+
     return(
       <section>
         <h3>Customers Queue</h3>
@@ -33,13 +46,9 @@ class Queue extends Component {
 
         <div className="tbl-content">
           <table cellPadding="0" cellSpacing="0" border="0">
-          {this.props.orders.map(order =>
-            order.status === true ?
-            null
-            :
-            <QueueCard key={order.id} order={order}/>
 
-          )}
+            {queueOrders}
+
           </table>
         </div>
 
@@ -51,6 +60,7 @@ class Queue extends Component {
 const mapStateToProps = (state) => {
   return({
     orders: state.orders
+
   })
 }
 

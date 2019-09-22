@@ -1,4 +1,3 @@
-
 let initialState = {
     status: false,
     firstName: "",
@@ -10,8 +9,6 @@ let initialState = {
 
 export default (state = initialState, action) => {
 
-
-// debugger
   switch(action.type) {
     case 'UPDATED_DATA':
       return action.orderFormData
