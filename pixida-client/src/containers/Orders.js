@@ -11,8 +11,7 @@ const Orders = (props) => (
       <table cellPadding="0" cellSpacing="0" border="0">
          <thead>
            <tr>
-             <th>First Name</th>
-             <th>Last Name</th>
+             <th>Name</th>
              <th>Item</th>
              <th>Service</th>
              <th>Status</th>
@@ -26,8 +25,7 @@ const Orders = (props) => (
         {props.orders.map(order =>
           <tbody key={order.id}>
             <tr>
-            <td>{order.customer.first_name}</td>
-            <td>{order.customer.last_name}</td>
+            <td>{order.customer.name}</td>
             <td>{order.item.name}</td>
             <td>{order.service.name}</td>
             <td>{order.status}</td>

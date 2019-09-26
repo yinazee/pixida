@@ -25,8 +25,7 @@ export const addOrder = order => {
         status: order.status,
 
         customer: {
-          first_name: order.customer.firstName,
-          last_name: order.customer.lastName
+          name: order.customer.name
         },
         item: {
           name: order.item.name
@@ -123,11 +122,12 @@ export function createOrder(order) {
   }
 }
 
-export function deleteOrder(order, history) {
-  console.log("im inside deleteOrder action", order)
+export function deleteOrder(orderId) {
+  console.log("im inside deleteOrder action", orderId)
 
   return dispatch => {
-    return fetch(`http://localhost:3001/api/orders/${order.id}`, {
+    return fetch(`http://localhost:3000/api/orders/${orderId}`, {
+
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
@@ -138,9 +138,9 @@ export function deleteOrder(order, history) {
         if (resp.error) {
           alert(resp.error)
         } else {
-          dispatch(deleteOrderSuccess(order.id))
+          dispatch(deleteOrderSuccess(orderId))
 
-          history.push(`/orders`)
+          // history.push(`/orders`)
           // go somewhere else --> trip show?
           // add the new trip to the store
         }

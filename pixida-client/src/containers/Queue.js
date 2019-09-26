@@ -17,11 +17,11 @@ class Queue extends Component {
     console.log("queue", this.props.orders)
 
 
-    const queueOrders = this.props.orders ? this.props.orders.map(order =>
+    const queueOrders = this.props.orders ? this.props.orders.map((order, index) =>
         order.status ?
         null
         :
-      <QueueCard key={order.id} order={order}/>
+      <QueueCard key={index} order={order} />
     ) : null
 
 
@@ -32,8 +32,7 @@ class Queue extends Component {
           <table cellPadding="0" cellSpacing="0" border="0">
              <thead>
                <tr>
-                 <th>First Name</th>
-                 <th>Last Name</th>
+                 <th>Name</th>
                  <th>Item</th>
                  <th>Service</th>
                  <th>Edit</th>

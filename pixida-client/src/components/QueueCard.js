@@ -4,7 +4,7 @@ import { updateOrder, deleteOrder } from '../actions/orders'
 
 
 
-const QueueCard = ({ order, updateOrder }) => {
+const QueueCard = ({ order, updateOrder, deleteOrder }) => {
 
 
     const handleOnClick = event => {
@@ -14,14 +14,15 @@ const QueueCard = ({ order, updateOrder }) => {
     }
 
     const handleOnDelete = event => {
-      deleteOrder(order)
+      console.log(order.id)
+      // debugger
+      deleteOrder(order.id)
     }
 
   return (
       <tbody key={order.id}>
           <tr>
-          <td>{order.customer.first_name}</td>
-          <td>{order.customer.last_name}</td>
+          <td>{order.customer.name}</td>
           <td>{order.item.name}</td>
           <td>{order.service.name}</td>
           <td><button className="tbl-header">Edit</button></td>

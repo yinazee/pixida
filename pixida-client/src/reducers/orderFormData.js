@@ -1,7 +1,6 @@
 let initialState = {
     status: false,
-    firstName: "",
-    lastName: "",
+    name: "",
     item: "",
     service: "",
 }

@@ -30,7 +30,7 @@ class OrderForm extends Component {
 
 
   render() {
-    const { firstName, lastName, item, service } = this.props.orderFormData
+    const { name, item, service } = this.props.orderFormData
 
 
     return (
@@ -40,8 +40,7 @@ class OrderForm extends Component {
           <table>
              <thead>
                <tr>
-                 <th>First Name</th>
-                 <th>Last Name</th>
+                 <th>Name</th>
                  <th>Item</th>
                  <th>Service</th>
                </tr>
@@ -58,17 +57,8 @@ class OrderForm extends Component {
                 <input
                   type="text"
                   onChange={this.handleOnChange}
-                  name="firstName"
-                  value={firstName}>
-                </input>
-                </td>
-
-                <td>
-                <input
-                  type="text"
-                  onChange={this.handleOnChange}
-                  name="lastName"
-                  value={lastName}>
+                  name="name"
+                  value={name}>
                 </input>
                 </td>
 

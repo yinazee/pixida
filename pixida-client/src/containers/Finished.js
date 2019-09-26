@@ -20,8 +20,7 @@ class Finished extends Component {
           <table cellPadding="0" cellSpacing="0" border="0">
              <thead>
                <tr>
-                 <th>First Name</th>
-                 <th>Last Name</th>
+                 <th>Name</th>
                  <th>Item</th>
                  <th>Service</th>
                  <th>Edit</th>
