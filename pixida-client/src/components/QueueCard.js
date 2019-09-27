@@ -15,7 +15,6 @@ const QueueCard = ({ order, updateOrder, deleteOrder }) => {
 
     const handleOnDelete = event => {
       console.log(order.id)
-      // debugger
       deleteOrder(order.id)
     }
 

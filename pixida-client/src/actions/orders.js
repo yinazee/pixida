@@ -9,7 +9,6 @@ const setOrders = orders => {
 
 export const addOrder = order => {
   console.log("success:", order)
-  // debugger
 
   let newOrder = {
         status: order.status,
@@ -23,7 +22,6 @@ export const addOrder = order => {
         service: {
           name: order.service.name
         }
-
   }
   return {
     type: "ADD_ORDER",
@@ -43,7 +41,7 @@ export const deleteOrderSuccess = orderId => {
 
 
 
-export function getOrders() {
+export const getOrders = () => {
   return dispatch => {
     return fetch('http://localhost:3000/orders')
       .then(response => response.json())
@@ -52,7 +50,7 @@ export function getOrders() {
   }
 }
 
-export function updateOrderStore(order) {
+export const updateOrderStore = (order) => {
   return {
     type: "UPDATE_ORDER",
     order
@@ -70,22 +68,21 @@ export function updateOrder(order) {
     })
       .then(response => response.json())
       .then(order =>
-        // console.log(order)
         dispatch(updateOrderStore(order))
       )
-      // .catch(error => console.log(error))
+
   }
 }
-//
-//
-export function finishOrder(order) {
+
+
+export const finishOrder = (order) => {
   return {
     type: 'FINISH_ORDER_SUCCESS',
     order
   }
 }
 
-export function createOrder(order) {
+export const createOrder = (order) => {
   return dispatch => {
     return fetch('http://localhost:3000/orders', {
         method: 'POST',
@@ -102,13 +99,13 @@ export function createOrder(order) {
       }else {
         dispatch(addOrder(order))
         dispatch(resetOrderForm())
-        alert("New Order added to Queue!")
+        alert(`${order.customer.name}'s order has been added to the queue!`)
       }
     })
   }
 }
 
-export function deleteOrder(orderId) {
+export const deleteOrder = (orderId) => {
   console.log("im inside deleteOrder action", orderId)
 
   return dispatch => {
@@ -126,9 +123,6 @@ export function deleteOrder(orderId) {
         } else {
           dispatch(deleteOrderSuccess(orderId))
 
-          // history.push(`/orders`)
-          // go somewhere else --> trip show?
-          // add the new trip to the store
         }
       })
       .catch(console.log)

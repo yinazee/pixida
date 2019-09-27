@@ -4,8 +4,7 @@ import Queue from './Queue'
 import Finished from './Finished'
 import Home from './Home'
 import NavBar from '../components/NavBar'
-import { NavLink } from 'react-router-dom'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import './App.css';
 
