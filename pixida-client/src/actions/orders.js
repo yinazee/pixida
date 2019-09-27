@@ -1,14 +1,4 @@
-// export const newOrder = order => {
-//   return dispatch => {
-//     return fetch ("http;//localhost:3001/api/orders/new", {
-//       method: 'POST',
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(order)
-//     })
-//   }
-// }
+import { resetOrderForm }  from './orderForm'
 
 const setOrders = orders => {
   return {
@@ -41,11 +31,7 @@ export const addOrder = order => {
   }
 }
 
-export const resetOrderForm = () => {
-  return {
-    type: "RESET_NEW_ORDER_FORM",
-  }
-}
+
 
 export const deleteOrderSuccess = orderId => {
   console.log("here", orderId)
@@ -59,7 +45,7 @@ export const deleteOrderSuccess = orderId => {
 
 export function getOrders() {
   return dispatch => {
-    return fetch('http://localhost:3000/api/orders')
+    return fetch('http://localhost:3000/orders')
       .then(response => response.json())
       .then(orders => dispatch(setOrders(orders)))
       .catch(error => console.log(error))
@@ -75,7 +61,7 @@ export function updateOrderStore(order) {
 
 export function updateOrder(order) {
   return dispatch => {
-    return fetch(`http://localhost:3000/api/orders/${order.id}`, {
+    return fetch(`http://localhost:3000/orders/${order.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
@@ -101,7 +87,7 @@ export function finishOrder(order) {
 
 export function createOrder(order) {
   return dispatch => {
-    return fetch('http://localhost:3000/api/orders', {
+    return fetch('http://localhost:3000/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -115,8 +101,8 @@ export function createOrder(order) {
         alert(order.error)
       }else {
         dispatch(addOrder(order))
-        // dispatch(resetOrderForm())
-
+        dispatch(resetOrderForm())
+        alert("New Order added to Queue!")
       }
     })
   }
@@ -126,7 +112,7 @@ export function deleteOrder(orderId) {
   console.log("im inside deleteOrder action", orderId)
 
   return dispatch => {
-    return fetch(`http://localhost:3000/api/orders/${orderId}`, {
+    return fetch(`http://localhost:3000/orders/${orderId}`, {
 
       method: "DELETE",
       headers: {

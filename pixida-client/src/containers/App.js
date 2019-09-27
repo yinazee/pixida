@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import OrderFormCard from '../components/OrderFormCard'
 import Queue from './Queue'
 import Finished from './Finished'
-// import { Route, Switch, withRouter } from 'react-router-dom'
+import Home from './Home'
+import NavBar from '../components/NavBar'
+import { NavLink } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
 import './App.css';
 
@@ -18,11 +21,18 @@ class App extends Component {
         <img src="https://i.imgur.com/jbzs690.png" alt="pixida"/>
         <h1>PIXIDA</h1>
 
-        <div className="App">
-          <OrderFormCard />
-          <Queue />
-          <Finished />
+
+        <NavBar/>
+        <div>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route exact path='/orders/new' component={OrderFormCard}/>
+          <Route exact path='/queue' component={Queue}/>
+          <Route exact path='/finished' component={Finished}/>
+
+        </Switch>
         </div>
+
 
       </div>
     )

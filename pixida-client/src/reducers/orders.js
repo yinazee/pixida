@@ -1,9 +1,4 @@
-let initialState = {
-    status: false,
-    name: "",
-    item: "",
-    service: "",
-}
+
 
 export default ( state = [], action ) => {
 
@@ -19,12 +14,10 @@ export default ( state = [], action ) => {
       // console.log("reducer", action.newOrder)
         return state = [...state, action.newOrder]
 
-      case 'RESET_NEW_ORDER_FORM':
-        return initialState
 
         case "DELETE_ORDER":
-          console.log("reducer", action.order)
-              return state.filter(order => order.id === action.order.id ? false : true)
+          console.log("reducer", action)
+              return state.filter(order => order.id === action.orderId ? false : true)
       //
       // case 'DELETE_ORDER':
       //   // const orders = state.order.filter ( order => order.id !== order.id)

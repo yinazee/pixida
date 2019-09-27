@@ -12,6 +12,10 @@ export default (state = initialState, action) => {
     case 'UPDATED_DATA':
       return action.orderFormData
 
+
+      case 'RESET_NEW_ORDER_FORM':
+        return initialState
+
       default:
         return state
   }

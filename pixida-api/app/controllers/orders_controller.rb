@@ -43,6 +43,7 @@ class OrdersController < ApiController
   # DELETE /orders/1
   def destroy
     @order.destroy
+    render json: {data: "Order successfully deleted."}
   end
 
   private

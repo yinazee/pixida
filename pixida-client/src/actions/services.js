@@ -7,7 +7,7 @@ const setServices = services => {
 
 export function getServices() {
   return dispatch => {
-    return fetch('http://localhost:3000/api/services')
+    return fetch('http://localhost:3000/services')
       .then(response => response.json())
       .then(services => dispatch(setServices(services)))
       .catch(error => console.log(error))
